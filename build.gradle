@@ -1,0 +1,24 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
+    id 'java'
+}
+
+group 'com.criteo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.criteo.benchmarks.ServerBenchmark'
+    }
+}
+
+dependencies {
+    compile 'org.eclipse.jetty:jetty-server:9.4.14.v20181114'
+    compile 'com.google.code.gson:gson:2.8.5'
+    compile 'org.hdrhistogram:HdrHistogram:2.1.11'
+}
